@@ -60,15 +60,15 @@ class UserSignup extends Controller
     $dd = ['to' => $request['email'], 'to_name' => $request['name'], 'subject' => 'OTP'];
 
     $chk = true;
-    // $chk = Mail::send(
-    //   'mails.send-otp',
-    //   $emaildata,
-    //   function ($message) use ($dd) {
-    //     $message->to($dd['to'], $dd['to_name']);
-    //     $message->subject('OTP');
-    //     $message->priority(1);
-    //   }
-    // );
+    $chk = Mail::send(
+      'mails.send-otp',
+      $emaildata,
+      function ($message) use ($dd) {
+        $message->to($dd['to'], $dd['to_name']);
+        $message->subject('OTP');
+        $message->priority(1);
+      }
+    );
     if ($chk == false) {
       $emsg = response()->Fail('Sorry! Please try again latter');
       session()->flash('emsg', $emsg);
