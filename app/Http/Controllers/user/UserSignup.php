@@ -121,8 +121,9 @@ class UserSignup extends Controller
         $result->source = 'Job Application';
         $result->save();
         session()->flash('smsg', 'Email verified. Succesfully logged in.');
-        $request->session()->put('userLoggedIn', true);
-        $request->session()->put('user_id', $request->session()->get('last_id'));
+        // $request->session()->put('userLoggedIn', true);
+        // $request->session()->put('user_id', $request->session()->get('last_id'));
+        $request->session()->put('userLoggedIn', ['user_id' => $result->id, 'user_name' => $result->name, 'role' => $result->role, 'username' => $request['username']]);
         return redirect('user/job-application/personal-details');
       }
     } else {

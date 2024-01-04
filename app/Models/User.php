@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
   use HasFactory;
+  public function getReferal()
+  {
+    return $this->hasOne(User::class, 'user_unique_id', 'reference_id');
+  }
 }

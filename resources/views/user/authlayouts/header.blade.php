@@ -34,6 +34,45 @@
    <script src="{{ url('/') }}/assets/js/html5shiv.min.js"></script>
    <script src="{{ url('/') }}/assets/js/respond.min.js"></script>
   <![endif]-->
+  <style>
+    .hide-this {
+      display: none;
+    }
+
+    .f-rgt {
+      float: right;
+    }
+
+    .btn-xs,
+    .btn-group-xs>.btn {
+      padding: 1px 5px;
+      font-size: 0.8571rem;
+      line-height: 1.5;
+      border-radius: 3px;
+    }
+
+    .float-right {
+      float: right;
+    }
+
+    .chr {
+      margin-top: 3px;
+      margin-bottom: 3px
+    }
+
+    .just {
+      text-align: justify;
+      text-justify: inter-word;
+    }
+
+    .setBtn {
+      margin-top: 31px;
+    }
+
+    .card {
+      border: 1px solid #6d70738f !important;
+    }
+  </style>
 </head>
 
 <body class="account-page">

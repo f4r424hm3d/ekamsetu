@@ -4,6 +4,7 @@ use App\Http\Controllers\admin\AdminDashboard;
 use App\Http\Controllers\admin\AdminLogin;
 use App\Http\Controllers\CommonController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\user\ApplicationProfileC;
 use App\Http\Controllers\user\UserApplyJobApplicationC;
 use App\Http\Controllers\user\UserDashboardC;
 use App\Http\Controllers\user\UserLogin;
@@ -98,6 +99,7 @@ Route::middleware(['adminLoggedIn'])->group(function () {
 Route::middleware(['userLoggedOut'])->group(function () {
   Route::prefix('/user')->group(function () {
     Route::get('/sign-in', [UserLogin::class, 'login']);
+    Route::get('/login', [UserLogin::class, 'login']);
     Route::post('/login', [UserLogin::class, 'signin']);
 
     Route::get('/job-application/', [UserSignup::class, 'jobApplication']);
@@ -130,14 +132,26 @@ Route::middleware(['userLoggedIn'])->group(function () {
 
     Route::prefix('/job-application')->group(function () {
       Route::get('/personal-details', [UserApplyJobApplicationC::class, 'pd']);
-      Route::get('/identification-details', [UserApplyJobApplicationC::class, 'index']);
-      Route::get('/educational-background', [UserApplyJobApplicationC::class, 'index']);
-      Route::get('/professional-experience', [UserApplyJobApplicationC::class, 'index']);
-      Route::get('/previous-employer', [UserApplyJobApplicationC::class, 'index']);
-      Route::get('/emergency-contact', [UserApplyJobApplicationC::class, 'index']);
-      Route::get('/motivation', [UserApplyJobApplicationC::class, 'index']);
-      Route::get('/declaration', [UserApplyJobApplicationC::class, 'index']);
+      Route::post('/personal-details', [UserApplyJobApplicationC::class, 'pds']);
+      Route::get('/identification-details', [UserApplyJobApplicationC::class, 'id']);
+      Route::post('/identification-details', [UserApplyJobApplicationC::class, 'ids']);
+      Route::get('/educational-background', [UserApplyJobApplicationC::class, 'eb']);
+      Route::post('/educational-background', [UserApplyJobApplicationC::class, 'ebs']);
+      Route::get('/professional-experience', [UserApplyJobApplicationC::class, 'pe']);
+      Route::post('/professional-experience', [UserApplyJobApplicationC::class, 'pes']);
+      Route::get('/previous-employer', [UserApplyJobApplicationC::class, 'preemp']);
+      Route::post('/previous-employer', [UserApplyJobApplicationC::class, 'preemps']);
+      Route::get('/emergency-contact', [UserApplyJobApplicationC::class, 'ec']);
+      Route::post('/emergency-contact', [UserApplyJobApplicationC::class, 'ecs']);
+      Route::get('/motivation', [UserApplyJobApplicationC::class, 'mot']);
+      Route::post('/motivation', [UserApplyJobApplicationC::class, 'mots']);
+      Route::get('/declaration', [UserApplyJobApplicationC::class, 'dec']);
+      Route::post('/declaration', [UserApplyJobApplicationC::class, 'decs']);
+
+      Route::get('/thank-you', [UserApplyJobApplicationC::class, 'thankYou']);
     });
+
+    Route::get('/application-details', [ApplicationProfileC::class, 'index']);
   });
 });
 

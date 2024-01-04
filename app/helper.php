@@ -123,7 +123,7 @@ if (!function_exists('userIcon')) {
     if ($path != null || $path != '') {
       return asset($path);
     } else {
-      return asset('default/user-icon.jpg');
+      return asset('default/user.png');
     }
   }
 }
