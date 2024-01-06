@@ -83,7 +83,7 @@
         <div class="crms-tasks">
           <div class="tasks__item crms-task-item active">
             <div class="accordion-header js-accordion-header">Personal Detail</div>
-            <div class="accordion-bod js-accordion-body">
+            <div class="accordion-body js-accordion-body">
               <div class="accordion-body__contents">
                 <table class="table">
                   <tbody>
