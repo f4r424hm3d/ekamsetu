@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\admin\AdminDashboard;
 use App\Http\Controllers\admin\AdminLogin;
+use App\Http\Controllers\admin\JobApplicationAc;
+use App\Http\Controllers\common\UserProfileCc;
 use App\Http\Controllers\CommonController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\user\ApplicationProfileC;
@@ -83,15 +85,17 @@ Route::middleware(['adminLoggedOut'])->group(function () {
 });
 /* ADMIN ROUTES AFTER LOGIN */
 Route::middleware(['adminLoggedIn'])->group(function () {
-  Route::get('/admin/logout/', function () {
-    session()->forget('adminLoggedIn');
-    return redirect('admin/login');
-  });
   Route::prefix('/admin')->group(function () {
+    Route::get('/logout/', function () {
+      session()->forget('adminLoggedIn');
+      return redirect('admin/login');
+    });
     Route::get('/', [AdminDashboard::class, 'index']);
     Route::get('/dashboard', [AdminDashboard::class, 'index']);
     Route::get('/profile', [AdminDashboard::class, 'profile']);
     Route::post('/update-profile', [AdminDashboard::class, 'updateProfile']);
+
+    Route::get('/job-applications', [JobApplicationAc::class, 'index']);
   });
 });
 
@@ -162,4 +166,6 @@ Route::prefix('common')->group(function () {
   Route::get('/update-bulk-field', [CommonController::class, 'updateBulkField']);
   Route::get('/slugify', [CommonController::class, 'slugify']);
   Route::get('/update-token', [CommonController::class, 'updateToken']);
+
+  Route::get('/get-job-app-detail', [UserProfileCc::class, 'getJobAppDetail']);
 });

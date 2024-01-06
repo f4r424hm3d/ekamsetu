@@ -24,7 +24,7 @@ if (!function_exists('printArray')) {
 if (!function_exists('getFormattedDate')) {
   function getFormattedDate($date, $formate)
   {
-    return date($formate, strtotime($date));
+    return $date == null ? 'N/A' : date($formate, strtotime($date));
   }
 }
 if (!function_exists('slugify')) {

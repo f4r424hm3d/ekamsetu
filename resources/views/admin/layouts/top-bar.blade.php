@@ -3,10 +3,9 @@
 
   <!-- Logo -->
   <div class="header-left">
-    <a href="{{ url('user') }}" class="logo">
-      {{ config('app.name') }}
-      {{-- <img src="{{ asset('/') }}assets/img/logo.png" alt="Logo" class="sidebar-logo">
-      <img src="{{ asset('/') }}assets/img/s-logo.png" alt="Logo" class="mini-sidebar-logo"> --}}
+    <a href="{{ url('admin') }}" class="logo">
+      <img src="{{ asset('/') }}assets/img/logo.png" alt="Logo" class="sidebar-logo">
+      <img src="{{ asset('/') }}assets/img/s-logo.png" alt="Logo" class="mini-sidebar-logo">
     </a>
   </div>
   <!-- /Logo -->
@@ -247,11 +246,11 @@
       <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
         <span class="user-img"><img src="{{ userIcon() }}" alt="">
           <span class="status online"></span></span>
-        <span>User</span>
+        <span>Admin</span>
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="{{ url('user/profile') }}">My Profile</a>
-        <a class="dropdown-item" href="{{ url('user/logout') }}">Logout</a>
+        <a class="dropdown-item" href="{{ url('admin/profile') }}">My Profile</a>
+        <a class="dropdown-item" href="{{ url('admin/logout') }}">Logout</a>
       </div>
     </li>
   </ul>
@@ -262,8 +261,8 @@
     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"><i
         class="fa fa-ellipsis-v"></i></a>
     <div class="dropdown-menu dropdown-menu-right">
-      <a class="dropdown-item" href="{{ url('user/profile') }}">My Profile</a>
-      <a class="dropdown-item" href="{{ url('user/logout') }}">Logout</a>
+      <a class="dropdown-item" href="{{ url('admin/profile') }}">My Profile</a>
+      <a class="dropdown-item" href="{{ url('admin/logout') }}">Logout</a>
     </div>
   </div>
   <!-- /Mobile Menu -->

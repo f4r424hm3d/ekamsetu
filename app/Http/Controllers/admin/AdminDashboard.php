@@ -10,15 +10,16 @@ class AdminDashboard extends Controller
 {
   public function index()
   {
+    $user = User::find(session()->get('adminLoggedIn')['user_id']);
     $page_route = '';
-    $data = compact('page_route');
+    $data = compact('page_route', 'user');
     return view('admin.index')->with($data);
   }
   public function profile()
   {
     $page_route = '';
-    $profile = User::find(session()->get('adminLoggedIn')['user_id']);
-    $data = compact('profile', 'page_route');
+    $user = User::find(session()->get('adminLoggedIn')['user_id']);
+    $data = compact('user', 'page_route');
     return view('admin.profile')->with($data);
   }
   public function updateProfile(Request $request)

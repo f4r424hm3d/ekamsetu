@@ -26,33 +26,14 @@
   <!--font style-->
   <link href="../css2?family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Lineawesome CSS -->
-  <link rel="stylesheet" href="{{ url('/') }}/assets/css/line-awesome.min.css">
-
-  <!-- Chart CSS -->
-  <link rel="stylesheet" href="{{ url('/') }}/assets/plugins/morris/morris.css">
-
-  <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/') }}assets/img/favicon.png">
-
-  <!-- Select2 CSS -->
-  <link rel="stylesheet" href="{{ url('/') }}/assets/css/select2.min.css">
-
-  <!-- Datetimepicker CSS -->
-  <link rel="stylesheet" href="{{ url('/') }}/assets/css/bootstrap-datetimepicker.min.css">
-
-  <!-- Datatable CSS -->
-  <link rel="stylesheet" href="{{ url('/') }}/assets/css/dataTables.bootstrap4.min.css">
-
-  <!-- Theme CSS -->
-  <link rel="stylesheet" href="{{ url('/') }}/assets/css/theme-settings.css">
-
-  <!-- Wizard CSS -->
-  <link rel="stylesheet" href="{{ url('/') }}/assets/plugins/twitter-bootstrap-wizard/form-wizard.css">
-
   <!-- Main CSS -->
   <link rel="stylesheet" href="{{ url('/') }}/assets/css/style.css" class="themecls">
 
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+   <script src="{{ url('/') }}/assets/js/html5shiv.min.js"></script>
+   <script src="{{ url('/') }}/assets/js/respond.min.js"></script>
+  <![endif]-->
   <style>
     .hide-this {
       display: none;
@@ -92,12 +73,6 @@
       border: 1px solid #6d70738f !important;
     }
   </style>
-
 </head>
 
-<body>
-  <!-- Main Wrapper -->
-  <div class="main-wrapper">
-
-    @include('admin.layouts.top-bar')
-    @include('admin.layouts.sidebar')
+<body class="account-page">

@@ -10,7 +10,7 @@ class ReferenceIdExists implements Rule
   public function passes($attribute, $value)
   {
     // Check if the provided reference ID exists in the users table
-    return User::where('reference_id', $value)->exists();
+    return User::where('user_unique_id', $value)->exists();
   }
 
   public function message()
