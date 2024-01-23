@@ -1,4 +1,4 @@
-@extends('user.authlayouts.main')
+@extends('admin.authlayouts.main')
 @push('title')
   <title>Login</title>
 @endpush

@@ -1,8 +1,17 @@
+
 <style>
   .accordion-body {}
 </style>
+<style type="text/css">
+  .modal.left .modal-content, .modal.right .modal-content {
+    height: 100%;
+    overflow-y: auto;
+ }
+</style>
+<style type="text/css">
+  .scroll-bar{scroll-behavior: smooth!important;}
+</style>
 <div class="modal-header">
-
   <div class="row w-100">
     <div class="col-md-7 account d-flex">
       <div class="company_img">
@@ -12,7 +21,6 @@
         <p class="mb-0">{{ $user->name }}</p>
         <span class="modal-title">{{ $user->email }}</span>
       </div>
-
     </div>
     <div class="col-md-5 text-end">
       <ul class="list-unstyled list-style-none">
@@ -42,7 +50,6 @@
   </div>
   <button type="button" class="btn-close xs-close" data-bs-dismiss="modal"></button>
 </div>
-
 <div class="card due-dates">
   <div class="card-body">
     <div class="row">
@@ -70,7 +77,7 @@
   </div>
 </div>
 
-<div class="modal-body">
+<div class="modal-body scrollTop">
   <div class="task-infos">
     <ul class="nav nav-tabs nav-tabs-solid nav-tabs-rounded nav-justified">
       <li class="nav-item"><a class="nav-link active" href="#task-details" data-bs-toggle="tab">Details</a>
@@ -78,11 +85,12 @@
       <li class="nav-item"><a class="nav-link" href="#task-related" data-bs-toggle="tab">Related</a></li>
       <li class="nav-item"><a class="nav-link" href="#task-activity" data-bs-toggle="tab">Activity</a></li>
     </ul>
-    <div class="tab-content">
+    <div class="tab-content scroll-bar">
       <div class="tab-pane show active" id="task-details">
         <div class="crms-tasks">
           <div class="tasks__item crms-task-item active">
-            <div class="accordion-header js-accordion-header">Personal Detail</div>
+            <div class="accordion-header js-accordion-header ">Personal Detail</div>
+
             <div class="accordion-body js-accordion-body">
               <div class="accordion-body__contents">
                 <table class="table">
@@ -832,3 +840,6 @@
 
   </div>
 </div>
+@include('admin.layouts.footer')
+
+

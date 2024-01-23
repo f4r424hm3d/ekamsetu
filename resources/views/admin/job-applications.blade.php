@@ -121,14 +121,8 @@
         </div>
       </div>
       <!-- /Content End -->
-
     </div>
-    <!-- /Page Content -->
-
   </div>
-  <!-- /Page Wrapper -->
-
-  <!--system users Modal -->
   <div class="modal right fade" id="job-application-detail" tabindex="-1" role="dialog" aria-modal="true">
     <div class="modal-dialog" role="document">
       <button type="button" class="close md-close" data-bs-dismiss="modal" aria-label="Close"> </button>
